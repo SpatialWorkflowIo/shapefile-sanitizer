@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shapefile-sanitizer"
+version = "0.1.0"
+description = "Beginner-friendly CLI to sanitize common shapefile issues."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Spatial Workflow" }]
+dependencies = []
+
+[project.optional-dependencies]
+geometry = [
+  "pyshp>=2.3.1",
+  "shapely>=2.0.0",
+]
+dev = [
+  "pytest>=8.0.0",
+  "pytest-cov>=5.0.0",
+]
+
+[project.scripts]
+shapefile-sanitizer = "shapefile_sanitizer.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=shapefile_sanitizer --cov-report=term-missing --cov-fail-under=100"
+testpaths = ["tests"]
+
