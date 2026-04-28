@@ -5,11 +5,34 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "shapefile-sanitizer"
 version = "0.1.0"
-description = "Beginner-friendly CLI to sanitize common shapefile issues."
+description = "Beginner-friendly CLI to sanitize common shapefile issues: encoding, projection, geometry."
 readme = "README.md"
+readme-content-type = "text/markdown"
 requires-python = ">=3.10"
-authors = [{ name = "Spatial Workflow" }]
-dependencies = []
+authors = [{ name = "Spatial Workflow", email = "info@spatialworkflow.io" }]
+license = { text = "MIT" }
+keywords = ["shapefile", "gis", "geospatial", "data-cleaning", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = ["pyshp>=2.3.1"]
+
+[project.urls]
+Homepage = "https://github.com/SpatialWorkflowIo/shapefile-sanitizer"
+Documentation = "https://github.com/SpatialWorkflowIo/shapefile-sanitizer/blob/main/README.md"
+Repository = "https://github.com/SpatialWorkflowIo/shapefile-sanitizer.git"
+Issues = "https://github.com/SpatialWorkflowIo/shapefile-sanitizer/issues"
 
 [project.optional-dependencies]
 geometry = [
